@@ -8,6 +8,7 @@
 
 .title__section p {
   color: white;
+  margin-left: 5px;
 }
 
 @media screen and (max-width: 1100px) {

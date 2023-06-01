@@ -1,8 +1,9 @@
 .home__description {
-  margin: 10px 0 20px;
+  margin: 10px 0 20px 15px;
   max-width: 50%;
   width: 100%;
   font-size: 1.1rem;
+  font-weight: 300;
   user-select: none;
 }
 

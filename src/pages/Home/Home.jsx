@@ -18,7 +18,7 @@ export const Home = () => {
         <br /> Solutions
       </Title>
       <div className="home__description">
-        WE GET YOU KNOWN, PERIOD.
+        <span style={{ fontWeight: 400, fontSize: "1.2rem" }}>WE GET YOU KNOWN, PERIOD.</span>
         <br /> Our company has one singular focus: to securely scale your awareness. This means stronger online
         reputation, greater brand awareness, ultimately more sales and ease at doing business.
       </div>

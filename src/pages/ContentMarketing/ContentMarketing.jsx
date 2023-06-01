@@ -157,7 +157,7 @@ export const ContentMarketing = () => {
 
   return (
     <>
-      <TitleSection>
+      <TitleSection style={{ flexDirection: "column" }}>
         <Title>Content Marketing</Title>
         <p style={{ fontWeight: 300 }}>Content Marketing that Makes an Impact</p>
       </TitleSection>
