@@ -43,30 +43,30 @@ export const Header = () => {
         <div className="header__menu__container">
           <div className="header__nav__link">Our services</div>
           <div className="header__menu">
-            <Link to={ROUTES.publicRelations} className="header__menu__link">
+            <Link to={ROUTES.publicRelations} className="header__menu__link" onClick={handleLinkClick}>
               Public relations
             </Link>
-            <Link to={ROUTES.contentMarketing} className="header__menu__link">
+            <Link to={ROUTES.contentMarketing} className="header__menu__link" onClick={handleLinkClick}>
               Content marketing
             </Link>
-            <Link to={ROUTES.socialMedia} className="header__menu__link">
+            <Link to={ROUTES.socialMedia} className="header__menu__link" onClick={handleLinkClick}>
               Social media
             </Link>
-            <Link to={ROUTES.seoMarketing} className="header__menu__link">
+            <Link to={ROUTES.seoMarketing} className="header__menu__link" onClick={handleLinkClick}>
               SEO marketing
             </Link>
-            <Link to={ROUTES.generalCounsel} className="header__menu__link">
+            <Link to={ROUTES.generalCounsel} className="header__menu__link" onClick={handleLinkClick}>
               General Counsel
             </Link>
-            <Link to={ROUTES.fundingAndInvestment} className="header__menu__link">
+            <Link to={ROUTES.fundingAndInvestment} className="header__menu__link" onClick={handleLinkClick}>
               Funding & Investment
             </Link>
-            <Link to={ROUTES.businessDesign} className="header__menu__link">
+            <Link to={ROUTES.businessDesign} className="header__menu__link" onClick={handleLinkClick}>
               Business design
             </Link>
           </div>
         </div>
-        <Link to={ROUTES.ourContacts} className="header__nav__link">
+        <Link to={ROUTES.ourContacts} className="header__nav__link" onClick={handleLinkClick}>
           Our contacts
         </Link>
       </nav>
