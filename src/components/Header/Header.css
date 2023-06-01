@@ -1,0 +1,249 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  z-index: 100;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.header__menu__container {
+  position: relative;
+}
+
+.header__menu__container:hover .header__menu {
+  display: flex;
+}
+
+.header__menu__container::after {
+  position: absolute;
+  content: "";
+  top: 2px;
+  right: -10px;
+  width: 5px;
+  height: 5px;
+  border-left: 2px solid #575757;
+  border-bottom: 2px solid #575757;
+  transform: rotate(-45deg);
+}
+
+.header__menu {
+  position: absolute;
+  top: 25px;
+  left: -15px;
+  width: auto;
+  height: auto;
+  display: none;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #575757;
+  padding: 10px 5px 5px;
+  background: white;
+  border-radius: 8px;
+}
+
+.header__menu__link {
+  transition: 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+
+.header__menu__link:hover {
+  color: white;
+  background: var(--purple);
+}
+
+.header__nav__link {
+  font-weight: 600;
+  color: #575757;
+  cursor: pointer;
+}
+
+.header__button {
+  padding: 8px 42px;
+  color: #2c2c2c;
+  font-weight: 600;
+  border-radius: 89px;
+  border: 3px solid #2c2c2c;
+}
+
+.menu {
+  opacity: 0;
+  pointer-events: none;
+  appearance: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: var(--purple);
+  padding: 25px;
+  flex-direction: column;
+  gap: 50px;
+  display: flex;
+  color: white;
+  transition: 0.2s;
+}
+
+.menu.opened {
+  opacity: 1;
+  pointer-events: all;
+  appearance: unset;
+}
+
+.menu__logo__container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.menu__logo__text {
+  color: white;
+  font-size: 1rem;
+  line-height: 110%;
+  font-weight: 300;
+}
+
+.menu__logo__text .bold {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.menu__logo__text .symbol {
+  font-size: 1.2rem;
+  margin: 0 7px;
+}
+
+.menu__icon__line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gray);
+  transition: 0.2s;
+}
+.menu__icon__line:nth-child(2) {
+  top: 8px;
+}
+.menu__icon__line:nth-child(3) {
+  top: 16px;
+}
+
+.menu__icon {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  z-index: 1000;
+}
+
+.menu__icon.transform .menu__icon__line {
+  background: white;
+}
+
+.menu__icon.transform .menu__icon__line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu__icon.transform .menu__icon__line:nth-child(1) {
+  transform: translate(0, 8px) rotate(-45deg);
+}
+
+.menu__icon.transform .menu__icon__line:nth-child(3) {
+  transform: translate(0, -8px) rotate(45deg);
+}
+
+.menu__link__title.dropdown {
+  position: relative;
+  width: 120px;
+  cursor: pointer;
+}
+
+.menu__link__title__icon {
+  position: absolute;
+  top: 5px;
+  right: -5px;
+  transition: 0.2s;
+}
+
+.menu__link__title__icon.rotate {
+  transform: rotate(180deg);
+}
+
+.menu__link__title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.menu__links {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  font-size: 0.9rem;
+  margin-top: 0;
+  overflow: hidden;
+  height: 0;
+  transition: 0.2s;
+}
+
+.menu__links.expanded {
+  height: 120px;
+  margin-top: 12px;
+}
+
+.menu__links__column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu__button__container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+}
+.menu__button {
+  padding: 8px 30px;
+  color: white;
+  font-weight: 600;
+  border-radius: 89px;
+  border: 3px solid white;
+}
+
+@media screen and (max-width: 700px) {
+  .header {
+    padding: 25px;
+  }
+  .header__nav__link,
+  .header__menu__container,
+  .header__button {
+    display: none;
+  }
+  .menu__icon {
+    display: flex;
+  }
+}

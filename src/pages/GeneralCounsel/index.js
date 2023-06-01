@@ -1,0 +1,1 @@
+export { GeneralCounsel } from "./GeneralCounsel";

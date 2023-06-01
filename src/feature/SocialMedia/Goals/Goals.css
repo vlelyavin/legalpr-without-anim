@@ -1,0 +1,31 @@
+.goals__item {
+  min-height: 220px;
+  width: 100%;
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+}
+
+.goals__item__title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.goals__item__icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--green);
+}
+
+.goals__item__title__text {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.goals__item__text {
+  padding: 20px;
+}

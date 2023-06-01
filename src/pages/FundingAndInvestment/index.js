@@ -1,0 +1,1 @@
+export { FundingAndInvestment } from "./FundingAndInvestment";
