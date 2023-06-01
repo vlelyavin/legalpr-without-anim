@@ -14,7 +14,7 @@ export const Home = () => {
   return (
     <>
       <Title color="black">
-        Legal & PR
+        Legal<span style={{ margin: "0 20px" }}>&</span>PR
         <br /> Solutions
       </Title>
       <div className="home__description">

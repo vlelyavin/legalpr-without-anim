@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import "./HomeGrid.css";
+import { ROUTES } from "../../../constants/routes";
 
 export const HomeGrid = () => {
   const Arrow = () => {
@@ -20,62 +22,66 @@ export const HomeGrid = () => {
     );
   };
 
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="homegrid">
-      <div className="homegrid__item">
+      <Link to={ROUTES.publicRelations} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           Public
           <br /> relations
         </div>
         <Arrow />
-      </div>
+      </Link>
 
-      <div className="homegrid__item">
+      <Link to={ROUTES.seoMarketing} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           SEO
           <br /> Marketing
         </div>
         <Arrow />
-      </div>
+      </Link>
 
-      <div className="homegrid__item">
+      <Link to={ROUTES.contentMarketing} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           Content
           <br /> marketing
         </div>
         <Arrow />
-      </div>
+      </Link>
 
-      <div className="homegrid__item">
+      <Link to={ROUTES.socialMedia} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           Social
           <br /> Media
         </div>
         <Arrow />
-      </div>
+      </Link>
 
-      <div className="homegrid__item">
+      <Link to={ROUTES.generalCounsel} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           General
           <br /> Counsel
         </div>
         <Arrow />
-      </div>
+      </Link>
 
-      <div className="homegrid__item">
+      <Link to={ROUTES.fundingAndInvestment} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           Funding &<br /> Investment
         </div>
         <Arrow />
-      </div>
+      </Link>
 
-      <div className="homegrid__item">
+      <Link to={ROUTES.businessDesign} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
           Business
           <br /> design
         </div>
         <Arrow />
-      </div>
+      </Link>
     </div>
   );
 };

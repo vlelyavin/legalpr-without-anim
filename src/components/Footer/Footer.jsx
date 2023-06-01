@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__item logo">
-        <div className="footer__logo__container">
+        <Link to={ROUTES.home} className="footer__logo__container">
           <svg width="51" height="60" viewBox="0 0 51 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M50.9515 34.6343V0H45.5791H43.7929H41.1898V0.0517033L16.9792 24.1592L7.15516 14.3735V7.99678L16.1381 16.9415L21.2024 11.9021L33.1554 0H23.0336L16.1415 6.86276L9.24598 0H7.15516H0.0588475H0V0.0585971V34.6654V34.7481H0.0830788L16.1381 50.7348L16.2038 50.6693L16.7819 51.2415L39.1855 28.9332L39.189 19.5025L16.7161 41.2317L7.15516 31.7114V24.4557L11.9183 29.1986L11.901 29.2158L16.9619 34.2552L43.7929 7.53835V31.7803L20.517 54.9606L25.5779 60L51 34.6826L50.9515 34.6343Z"
@@ -19,7 +19,7 @@ export const Footer = () => {
             <span className="bold">PR</span>
             <br /> Solutions
           </div>
-        </div>
+        </Link>
         <div className="footer__logo__licence">Legal & PR Solutions, 2023, all rights reserved</div>
       </div>
       <div className="footer__item">

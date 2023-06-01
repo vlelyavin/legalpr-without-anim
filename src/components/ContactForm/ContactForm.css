@@ -42,10 +42,17 @@
   margin-bottom: 10px;
 }
 
+.contact__form__input:focus,
+.contact__form__textarea:focus {
+  border-radius: 10px;
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.05);
+}
+
 .contact__form__input,
 .contact__form__textarea {
   background: #ebebeb;
   padding: 10px 20px;
+  transition: 0.2s;
 }
 
 .contact__form__textarea {
@@ -69,6 +76,12 @@
   border-radius: 40px;
   padding: 4px 80px;
   font-size: 1rem;
+  transition: 0.2s;
+}
+
+.contact__form__button:hover {
+  border-radius: 10px;
+  box-shadow: 0px 4px 42px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 1450px) {

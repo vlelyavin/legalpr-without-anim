@@ -18,12 +18,22 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: 0.3s;
 }
 
 .row__item__text {
   font-weight: 300;
   padding: 20px 30px 20px 0;
   font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.row__item:hover .row__item__icon__container {
+  transform: translateX(5px);
+}
+
+.row__item:hover .row__item__text {
+  transform: translateX(5px);
 }
 
 @media screen and (max-width: 1000px) {
