@@ -4,7 +4,7 @@ export const ROUTES = {
   contentMarketing: "/contentMarketing",
   socialMedia: "/socialMedia",
   seoMarketing: "/seoMarketing",
-  generalCounsel: "/generalCounsel",
+  legalAdvice: "/legalAdvice",
   fundingAndInvestment: "/fundingAndInvestment",
   businessDesign: "/businessDesign",
   contactUs: "/contactUs",

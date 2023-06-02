@@ -51,8 +51,8 @@ export const Header = () => {
                 <Link to={ROUTES.seoMarketing} className="header__menu__link" onClick={handleLinkClick}>
                   SEO marketing
                 </Link>
-                <Link to={ROUTES.generalCounsel} className="header__menu__link" onClick={handleLinkClick}>
-                  General Counsel
+                <Link to={ROUTES.legalAdvice} className="header__menu__link" onClick={handleLinkClick}>
+                  Legal advice
                 </Link>
                 <Link to={ROUTES.fundingAndInvestment} className="header__menu__link" onClick={handleLinkClick}>
                   Funding & Investment
@@ -131,8 +131,8 @@ export const Header = () => {
                     </Link>
                   </div>
                   <div className="menu__links__column">
-                    <Link to={ROUTES.generalCounsel} className="menu__link" onClick={handleLinkClick}>
-                      General Counsel
+                    <Link to={ROUTES.legalAdvice} className="menu__link" onClick={handleLinkClick}>
+                      Legal advice
                     </Link>
                     <Link to={ROUTES.fundingAndInvestment} className="menu__link" onClick={handleLinkClick}>
                       Funding & Investment

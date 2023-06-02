@@ -1,8 +1,6 @@
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
-import "../src/assets/styles/main.css";
-import "../src/assets/styles/fonts.css";
 import { Container } from "./components/Container";
 import { Route, Routes } from "react-router-dom";
 import { ROUTES } from "./constants/routes";
@@ -10,11 +8,13 @@ import { PublicRelations } from "./pages/PublicRelations";
 import { ContentMarketing } from "./pages/ContentMarketing";
 import { SocialMedia } from "./pages/SocialMedia";
 import { SeoMarketing } from "./pages/SeoMarketing";
-import { GeneralCounsel } from "./pages/GeneralCounsel";
 import { FundingAndInvestment } from "./pages/FundingAndInvestment";
 import { BusinessDesign } from "./pages/BusinessDesign";
 import { ContactUs } from "./pages/ContactUs";
 import { OurContacts } from "./pages/OurContacts";
+import { LegalAdvice } from "./pages/LegalAdvice";
+import "../src/assets/styles/main.css";
+import "../src/assets/styles/fonts.css";
 
 export const App = () => {
   return (
@@ -27,7 +27,7 @@ export const App = () => {
           <Route path={ROUTES.contentMarketing} element={<ContentMarketing />} />
           <Route path={ROUTES.socialMedia} element={<SocialMedia />} />
           <Route path={ROUTES.seoMarketing} element={<SeoMarketing />} />
-          <Route path={ROUTES.generalCounsel} element={<GeneralCounsel />} />
+          <Route path={ROUTES.legalAdvice} element={<LegalAdvice />} />
           <Route path={ROUTES.fundingAndInvestment} element={<FundingAndInvestment />} />
           <Route path={ROUTES.businessDesign} element={<BusinessDesign />} />
           <Route path={ROUTES.contactUs} element={<ContactUs />} />

@@ -60,10 +60,11 @@ export const HomeGrid = () => {
         <Arrow />
       </Link>
 
-      <Link to={ROUTES.generalCounsel} className="homegrid__item" onClick={handleLinkClick}>
+      <Link to={ROUTES.legalAdvice} className="homegrid__item" onClick={handleLinkClick}>
         <div className="homegrid__item__title">
-          General
-          <br /> Counsel
+          Legal
+          <br />
+          Advice
         </div>
         <Arrow />
       </Link>

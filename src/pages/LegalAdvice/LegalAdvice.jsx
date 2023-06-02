@@ -5,9 +5,9 @@ import { Row } from "../../components/Row";
 import { RowItem } from "../../components/RowItem";
 import { Title } from "../../components/Title";
 import { TitleSection } from "../../components/TitleSection";
-import "./GeneralCounsel.css";
+import "./LegalAdvice.css";
 
-export const GeneralCounsel = () => {
+export const LegalAdvice = () => {
   const contactFormRef = useRef();
   const fixedButtonRef = useRef();
   const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
@@ -124,7 +124,7 @@ export const GeneralCounsel = () => {
   return (
     <>
       <TitleSection>
-        <Title>General Counsel</Title>
+        <Title>Legal advice</Title>
       </TitleSection>
       <Row style={{ marginTop: "40px" }}>
         {counselFirstRowItems.map((item, idx) => (
