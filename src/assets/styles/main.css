@@ -40,10 +40,24 @@ textarea {
 
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
   font-family: var(--primary-ff);
+}
+
+.scrollbar-track {
+  z-index: 1001 !important;
+}
+
+.scrollbar-thumb {
+  z-index: 1002 !important;
+}
+
+.app {
   padding-top: 130px;
+  width: 100vw;
+  height: 100vh;
+  overscroll-behavior: contain;
 }

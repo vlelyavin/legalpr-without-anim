@@ -15,6 +15,7 @@
   align-items: flex-end;
   padding: 40px 40px;
   transition: 0.2s;
+  opacity: 0;
 }
 
 .homegrid__item:hover {
@@ -48,39 +49,63 @@
   transition: 0.2s;
 }
 
+@keyframes childAnim {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .homegrid__item:nth-child(1) {
   grid-area: 1 / 1 / 1 / 10;
   background: var(--purple);
+  animation: childAnim 0.8s forwards;
 }
 
 .homegrid__item:nth-child(2) {
   grid-area: 1 / 10 / 3 / 13;
   background: var(--orange);
+  animation: childAnim 0.8s forwards;
+  animation-delay: 0.2s;
 }
 
 .homegrid__item:nth-child(3) {
   grid-area: 2 / 1 / 2 / 5;
   background: var(--red);
+  animation: childAnim 0.8s forwards;
+  animation-delay: 0.35s;
 }
 
 .homegrid__item:nth-child(4) {
   grid-area: 2 / 5 / 2 / 10;
   background: var(--green);
+  animation: childAnim 0.8s forwards;
+  animation-delay: 0.6s;
 }
 
 .homegrid__item:nth-child(5) {
   grid-area: 3 / 1 / 3 / 4;
   background: var(--orange);
+  animation: childAnim 0.8s forwards;
+  animation-delay: 0.75s;
 }
 
 .homegrid__item:nth-child(6) {
   grid-area: 3 / 4 / 3 / 9;
   background: var(--purple);
+  animation: childAnim 0.8s forwards;
+  animation-delay: 0.25s;
 }
 
 .homegrid__item:nth-child(7) {
   grid-area: 3 / 9 / 3 / 13;
   background: var(--red);
+  animation: childAnim 0.8s forwards;
+  animation-delay: 0.65s;
 }
 
 @media screen and (max-width: 1450px) {

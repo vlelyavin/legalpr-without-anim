@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import SmoothScrollbar from "smooth-scrollbar";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
@@ -17,24 +19,38 @@ import "../src/assets/styles/main.css";
 import "../src/assets/styles/fonts.css";
 
 export const App = () => {
+  useEffect(() => {
+    const container = document.querySelector(".app");
+    const options = {
+      damping: 0.03,
+      thumbMinSize: 20,
+      renderByPixels: true,
+      alwaysShowTracks: false,
+      continuousScrolling: true,
+      overscrollEffect: true,
+    };
+    SmoothScrollbar.init(container, options);
+  }, []);
   return (
     <>
       <Header />
-      <Container>
-        <Routes>
-          <Route path={ROUTES.home} element={<Home />} />
-          <Route path={ROUTES.publicRelations} element={<PublicRelations />} />
-          <Route path={ROUTES.contentMarketing} element={<ContentMarketing />} />
-          <Route path={ROUTES.socialMedia} element={<SocialMedia />} />
-          <Route path={ROUTES.seoMarketing} element={<SeoMarketing />} />
-          <Route path={ROUTES.legalAdvice} element={<LegalAdvice />} />
-          <Route path={ROUTES.fundingAndInvestment} element={<FundingAndInvestment />} />
-          <Route path={ROUTES.businessDesign} element={<BusinessDesign />} />
-          <Route path={ROUTES.contactUs} element={<ContactUs />} />
-          <Route path={ROUTES.ourContacts} element={<OurContacts />} />
-        </Routes>
-        <Footer />
-      </Container>
+      <div className="app">
+        <Container>
+          <Routes>
+            <Route path={ROUTES.home} element={<Home />} />
+            <Route path={ROUTES.publicRelations} element={<PublicRelations />} />
+            <Route path={ROUTES.contentMarketing} element={<ContentMarketing />} />
+            <Route path={ROUTES.socialMedia} element={<SocialMedia />} />
+            <Route path={ROUTES.seoMarketing} element={<SeoMarketing />} />
+            <Route path={ROUTES.legalAdvice} element={<LegalAdvice />} />
+            <Route path={ROUTES.fundingAndInvestment} element={<FundingAndInvestment />} />
+            <Route path={ROUTES.businessDesign} element={<BusinessDesign />} />
+            <Route path={ROUTES.contactUs} element={<ContactUs />} />
+            <Route path={ROUTES.ourContacts} element={<OurContacts />} />
+          </Routes>
+          <Footer />
+        </Container>
+      </div>
     </>
   );
 };
