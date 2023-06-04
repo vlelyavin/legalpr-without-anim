@@ -4,7 +4,7 @@ import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
 import { Container } from "./components/Container";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { ROUTES } from "./constants/routes";
 import { PublicRelations } from "./pages/PublicRelations";
 import { ContentMarketing } from "./pages/ContentMarketing";
@@ -25,8 +25,10 @@ export const App = () => {
   const fixedButtonRef = useRef();
   const contactFormRef = useRef();
   const [isFixedButtonVisible, setFixedButtonVisibility] = useState(false);
-  const [isRouteCorrect, setRouteStatus] = useState(false);
+  const [isButtonRouteCorrect, setButtonRouteStatus] = useState(false);
+  const [isContactRouteCorrect, setContactRouteStatus] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   useEffect(() => {
     const container = document.querySelector(".app");
     const options = {
@@ -74,17 +76,23 @@ export const App = () => {
     contactForms.forEach((form) => {
       observer.observe(form);
     });
-  }, [location, fixedButtonRef, contactFormRef, isRouteCorrect]);
+  }, [location, fixedButtonRef, contactFormRef, isButtonRouteCorrect]);
 
   useEffect(() => {
+    if (location.pathname !== ROUTES.contactUs && location.pathname !== ROUTES.ourContacts) {
+      setButtonRouteStatus(true);
+    } else {
+      setButtonRouteStatus(false);
+    }
+
     if (
       location.pathname !== ROUTES.home &&
       location.pathname !== ROUTES.contactUs &&
       location.pathname !== ROUTES.ourContacts
     ) {
-      setRouteStatus(true);
+      setContactRouteStatus(true);
     } else {
-      setRouteStatus(false);
+      setContactRouteStatus(false);
     }
   }, [location]);
 
@@ -93,7 +101,11 @@ export const App = () => {
       block: "center",
       behavior: "smooth",
     };
-    contactFormRef.current.scrollIntoView(options);
+    if (location.pathname === ROUTES.home) {
+      navigate(ROUTES.contactUs);
+    } else {
+      contactFormRef.current.scrollIntoView(options);
+    }
   };
 
   return (
@@ -113,11 +125,11 @@ export const App = () => {
             <Route path={ROUTES.contactUs} element={<ContactUs />} />
             <Route path={ROUTES.ourContacts} element={<OurContacts />} />
           </Routes>
-          {isRouteCorrect && <ContactForm ref={contactFormRef} />}
+          {isContactRouteCorrect && <ContactForm ref={contactFormRef} />}
           <Footer />
         </Container>
       </div>
-      {isRouteCorrect && (
+      {isButtonRouteCorrect && (
         <FixedButton
           ref={fixedButtonRef}
           className={classNames({ visible: isFixedButtonVisible })}
