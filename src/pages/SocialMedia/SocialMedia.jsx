@@ -1,5 +1,3 @@
-import { forwardRef } from "react";
-import { ContactForm } from "../../components/ContactForm";
 import { Row } from "../../components/Row";
 import { RowItem } from "../../components/RowItem";
 import { SectionIntro } from "../../components/SectionIntro";
@@ -8,7 +6,7 @@ import { TitleSection } from "../../components/TitleSection";
 import { Goals } from "../../feature/SocialMedia/Goals";
 import "./SocialMedia.css";
 
-export const SocialMedia = forwardRef((props, ref) => {
+export const SocialMedia = () => {
   const socialMediaIntroItems = [
     {
       text: "The days of social media being a<br /> novelty is over.",
@@ -93,7 +91,6 @@ export const SocialMedia = forwardRef((props, ref) => {
       </Row>
       <SectionIntro>Goals of Social Media</SectionIntro>
       <Goals />
-      <ContactForm ref={ref} />
     </>
   );
-});
+};

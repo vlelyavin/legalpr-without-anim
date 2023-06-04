@@ -24,7 +24,7 @@ import classNames from "classnames";
 export const App = () => {
   const fixedButtonRef = useRef();
   const contactFormRef = useRef();
-  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
+  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(false);
   const [isRouteCorrect, setRouteStatus] = useState(false);
   const location = useLocation();
   useEffect(() => {
@@ -57,10 +57,12 @@ export const App = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setFixedButtonVisibility(false);
-          } else {
-            setFixedButtonVisibility(true);
+          if (window.innerWidth < 800) {
+            if (entry.isIntersecting) {
+              setFixedButtonVisibility(false);
+            } else {
+              setFixedButtonVisibility(true);
+            }
           }
         });
       },
