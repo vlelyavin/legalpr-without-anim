@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import { ContactForm } from "../../components/ContactForm";
 import { Quote } from "../../components/Quote";
 import { Row } from "../../components/Row";
 import { RowItem } from "../../components/RowItem";
@@ -7,13 +5,8 @@ import { SectionIntro } from "../../components/SectionIntro";
 import { Title } from "../../components/Title";
 import { TitleSection } from "../../components/TitleSection";
 import "./ContentMarketing.css";
-import { FixedButton } from "../../components/FixedButton";
 
 export const ContentMarketing = () => {
-  const contactFormRef = useRef();
-  const fixedButtonRef = useRef();
-  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
-
   const introStyle = {
     color: "white",
     padding: "10px 5px 10px 20px",
@@ -129,32 +122,6 @@ export const ContentMarketing = () => {
     },
   ];
 
-  const handleClick = () => {
-    const options = {
-      block: "center",
-      behavior: "smooth",
-    };
-    contactFormRef.current.scrollIntoView(options);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setFixedButtonVisibility(false);
-          } else {
-            setFixedButtonVisibility(true);
-          }
-        });
-      },
-      {
-        threshold: 0,
-      }
-    );
-    observer.observe(contactFormRef.current);
-  }, [fixedButtonRef]);
-
   return (
     <>
       <TitleSection style={{ flexDirection: "column" }}>
@@ -181,8 +148,6 @@ export const ContentMarketing = () => {
         style={{ background: "var(--purple)" }}
         text="When it comes it content marketing, follow the new 80/20 rule:<br/><b>80%</b> promotion / <b>20%</b> creation"
       />
-      {isFixedButtonVisible && <FixedButton ref={fixedButtonRef} onClick={handleClick} />}
-      <ContactForm ref={contactFormRef} />
     </>
   );
 };

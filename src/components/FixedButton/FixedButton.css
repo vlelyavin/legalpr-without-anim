@@ -8,11 +8,19 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 30px;
-  display: none;
+  display: flex;
+  opacity: 0;
+  appearance: none;
+  pointer-events: none;
   justify-content: center;
   align-items: center;
+  transition: 0.2s;
+  transform: translateY(10px);
 }
 
 .visible {
-  display: flex;
+  opacity: 1;
+  appearance: unset;
+  pointer-events: all;
+  transform: translateY(0);
 }

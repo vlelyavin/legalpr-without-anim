@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { forwardRef } from "react";
 import { ContactForm } from "../../components/ContactForm";
 import { Row } from "../../components/Row";
 import { RowItem } from "../../components/RowItem";
@@ -7,12 +7,8 @@ import { Title } from "../../components/Title";
 import { TitleSection } from "../../components/TitleSection";
 import { Goals } from "../../feature/SocialMedia/Goals";
 import "./SocialMedia.css";
-import { FixedButton } from "../../components/FixedButton";
 
-export const SocialMedia = () => {
-  const contactFormRef = useRef();
-  const fixedButtonRef = useRef();
-  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
+export const SocialMedia = forwardRef((props, ref) => {
   const socialMediaIntroItems = [
     {
       text: "The days of social media being a<br /> novelty is over.",
@@ -85,31 +81,6 @@ export const SocialMedia = () => {
     },
   ];
 
-  const handleClick = () => {
-    const options = {
-      block: "center",
-      behavior: "smooth",
-    };
-    contactFormRef.current.scrollIntoView(options);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (fixedButtonRef && entry.isIntersecting) {
-            setFixedButtonVisibility(false);
-          } else {
-            setFixedButtonVisibility(true);
-          }
-        });
-      },
-      {
-        threshold: 0,
-      }
-    );
-    observer.observe(contactFormRef.current);
-  }, []);
   return (
     <>
       <TitleSection>
@@ -122,8 +93,7 @@ export const SocialMedia = () => {
       </Row>
       <SectionIntro>Goals of Social Media</SectionIntro>
       <Goals />
-      {isFixedButtonVisible && <FixedButton ref={fixedButtonRef} onClick={handleClick} />}
-      <ContactForm ref={contactFormRef} />
+      <ContactForm ref={ref} />
     </>
   );
-};
+});

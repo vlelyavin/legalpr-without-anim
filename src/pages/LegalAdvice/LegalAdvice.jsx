@@ -1,6 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import { ContactForm } from "../../components/ContactForm";
-import { FixedButton } from "../../components/FixedButton";
 import { Row } from "../../components/Row";
 import { RowItem } from "../../components/RowItem";
 import { Title } from "../../components/Title";
@@ -8,9 +5,6 @@ import { TitleSection } from "../../components/TitleSection";
 import "./LegalAdvice.css";
 
 export const LegalAdvice = () => {
-  const contactFormRef = useRef();
-  const fixedButtonRef = useRef();
-  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
   const style = {
     padding: "5px 10px",
     borderRadius: "24px",
@@ -96,31 +90,6 @@ export const LegalAdvice = () => {
     boxShadow: "0px 4px 27px rgba(0, 0, 0, 0.25)",
   };
 
-  const handleClick = () => {
-    const options = {
-      block: "center",
-      behavior: "smooth",
-    };
-    contactFormRef.current.scrollIntoView(options);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setFixedButtonVisibility(false);
-          } else {
-            setFixedButtonVisibility(true);
-          }
-        });
-      },
-      {
-        threshold: 0,
-      }
-    );
-    observer.observe(contactFormRef.current);
-  }, []);
   return (
     <>
       <TitleSection>
@@ -136,8 +105,6 @@ export const LegalAdvice = () => {
           <RowItem style={style} imageStyle={imageStyle} text={item.text} image={item.image} key={idx} />
         ))}
       </Row>
-      {isFixedButtonVisible && <FixedButton ref={fixedButtonRef} onClick={handleClick} />}
-      <ContactForm ref={contactFormRef} />
     </>
   );
 };

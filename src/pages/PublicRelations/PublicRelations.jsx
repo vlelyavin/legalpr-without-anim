@@ -1,6 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-import { ContactForm } from "../../components/ContactForm";
-import { FixedButton } from "../../components/FixedButton";
 import { Quote } from "../../components/Quote";
 import { Row } from "../../components/Row";
 import { RowItem } from "../../components/RowItem";
@@ -11,9 +8,6 @@ import { Ignites } from "../../feature/PublicRelations/Ignites";
 import "./PublicRelations.css";
 
 export const PublicRelations = () => {
-  const fixedButtonRef = useRef();
-  const contactFormRef = useRef();
-  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
   const firstRowItems = [
     {
       text: "Get feature stories<br /> in the press",
@@ -165,32 +159,6 @@ export const PublicRelations = () => {
 <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z" fill="white"/>
 </svg>`;
 
-  const handleClick = () => {
-    const options = {
-      block: "center",
-      behavior: "smooth",
-    };
-    contactFormRef.current.scrollIntoView(options);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setFixedButtonVisibility(false);
-          } else {
-            setFixedButtonVisibility(true);
-          }
-        });
-      },
-      {
-        threshold: 0,
-      }
-    );
-    observer.observe(contactFormRef.current);
-  }, []);
-
   return (
     <>
       <TitleSection style={{ flexDirection: "column" }}>
@@ -272,9 +240,6 @@ export const PublicRelations = () => {
           style={{ fontSize: "0.9rem", gap: "20px", padding: "5px 15px", width: "calc(34% - 20px)" }}
         />
       </Row>
-      {isFixedButtonVisible && <FixedButton ref={fixedButtonRef} onClick={handleClick} />}
-
-      <ContactForm ref={contactFormRef} />
     </>
   );
 };

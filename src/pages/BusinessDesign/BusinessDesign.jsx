@@ -1,40 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { ContactForm } from "../../components/ContactForm";
 import { Row } from "../../components/Row";
 import { Title } from "../../components/Title";
 import { TitleSection } from "../../components/TitleSection";
 import "./BusinessDesign.css";
-import { FixedButton } from "../../components/FixedButton";
 
 export const BusinessDesign = () => {
-  const contactFormRef = useRef();
-  const fixedButtonRef = useRef();
-  const [isFixedButtonVisible, setFixedButtonVisibility] = useState(true);
-  const handleClick = () => {
-    const options = {
-      block: "center",
-      behavior: "smooth",
-    };
-    contactFormRef.current.scrollIntoView(options);
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setFixedButtonVisibility(false);
-          } else {
-            setFixedButtonVisibility(true);
-          }
-        });
-      },
-      {
-        threshold: 0,
-      }
-    );
-    observer.observe(contactFormRef.current);
-  }, []);
   return (
     <>
       <TitleSection>
@@ -223,8 +192,6 @@ export const BusinessDesign = () => {
           </div>
         </div>
       </Row>
-      {isFixedButtonVisible && <FixedButton ref={fixedButtonRef} onClick={handleClick} />}
-      <ContactForm ref={contactFormRef} />
     </>
   );
 };
