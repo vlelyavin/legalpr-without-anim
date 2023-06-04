@@ -86,7 +86,7 @@ export const App = () => {
     } else {
       setRouteStatus(false);
     }
-  }, [location, isRouteCorrect]);
+  }, [location]);
 
   const handleClick = () => {
     const options = {

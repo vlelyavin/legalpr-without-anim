@@ -15,11 +15,11 @@ export const Header = () => {
         setMenuVisibility(false);
       }
     });
-  });
+  }, []);
 
   const handleLinkClick = () => {
     setMenuVisibility(false);
-    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
   };
 
   return (
