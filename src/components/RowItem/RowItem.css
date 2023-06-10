@@ -29,11 +29,11 @@
 }
 
 .row__item:hover .row__item__icon__container {
-  transform: translateX(5px);
+  /* transform: translateX(5px); */
 }
 
 .row__item:hover .row__item__text {
-  transform: translateX(5px);
+  /* transform: translateX(5px); */
 }
 
 @media screen and (max-width: 1000px) {

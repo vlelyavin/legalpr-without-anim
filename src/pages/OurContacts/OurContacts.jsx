@@ -35,7 +35,9 @@ export const OurContacts = () => {
                       fill="#5200FF"
                     />
                   </svg>
-                  <p className="contacts__info__item__text">+447537142922</p>
+                  <a href="tel:+447537142922" className="contacts__info__item__text">
+                    +447537142922
+                  </a>
                 </div>
               </div>
             </div>
@@ -49,7 +51,9 @@ export const OurContacts = () => {
                       fill="#5200FF"
                     />
                   </svg>
-                  <p className="contacts__info__item__text">office@legal-pr.com</p>
+                  <a href="mailto:office@legal-pr.com" className="contacts__info__item__text">
+                    office@legal-pr.com
+                  </a>
                 </div>
               </div>
             </div>

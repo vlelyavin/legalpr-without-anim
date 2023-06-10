@@ -124,7 +124,7 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <Link to={ROUTES.contactUs} className="footer__item" onClick={() => window.scrollTo(0, 0)}>
+          <Link to={ROUTES.contactUs} className="footer__item">
             <button className="footer__button">Contact us</button>
           </Link>
         </div>

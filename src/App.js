@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import SmoothScrollbar from "smooth-scrollbar";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { Footer } from "./components/Footer";
@@ -24,35 +23,23 @@ import classNames from "classnames";
 export const App = () => {
   const fixedButtonRef = useRef();
   const contactFormRef = useRef();
+  const appRef = useRef();
   const [isFixedButtonVisible, setFixedButtonVisibility] = useState(false);
   const [isButtonRouteCorrect, setButtonRouteStatus] = useState(false);
   const [isContactRouteCorrect, setContactRouteStatus] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
-    const container = document.querySelector(".app");
-    const options = {
-      damping: 0.03,
-      thumbMinSize: 20,
-      renderByPixels: true,
-      alwaysShowTracks: false,
-      continuousScrolling: true,
-      overscrollEffect: true,
-    };
     window.addEventListener("resize", () => {
       if (window.innerWidth > 800) {
-        SmoothScrollbar.init(container, options);
         setFixedButtonVisibility(false);
       } else {
-        SmoothScrollbar.destroy(container, options);
         setFixedButtonVisibility(true);
       }
     });
     if (window.innerWidth > 800) {
-      SmoothScrollbar.init(container, options);
       setFixedButtonVisibility(false);
     } else {
-      SmoothScrollbar.destroy(container, options);
       setFixedButtonVisibility(true);
     }
 
@@ -76,7 +63,7 @@ export const App = () => {
     contactForms.forEach((form) => {
       observer.observe(form);
     });
-  }, [location, fixedButtonRef, contactFormRef, isButtonRouteCorrect]);
+  }, [location]);
 
   useEffect(() => {
     if (location.pathname !== ROUTES.contactUs && location.pathname !== ROUTES.ourContacts) {
@@ -111,7 +98,7 @@ export const App = () => {
   return (
     <>
       <Header />
-      <div className="app">
+      <div className="app" ref={appRef}>
         <Container>
           <Routes>
             <Route path={ROUTES.home} element={<Home />} />

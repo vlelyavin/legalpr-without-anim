@@ -106,7 +106,7 @@
   border: 3px solid var(--purple);
   border-radius: 89px;
   font-size: 1.1rem;
-  transition: 0.3s;
+  /* transition: 0.3s; */
 }
 
 .footer__button:hover {
@@ -118,7 +118,7 @@
 }
 
 .footer__logo__container:hover .footer__logo__text {
-  transform: translateX(3px);
+  /* transform: translateX(3px); */
 }
 
 @media screen and (max-width: 1380px) {
